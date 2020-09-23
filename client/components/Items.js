@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Hourglass, Fieldset } from "react95";
+import { Hourglass, Fieldset, Divider } from "react95";
 
 export default function Items() {
   // Initialize some state for the data to be held in
@@ -43,11 +43,14 @@ export default function Items() {
       <Fieldset id='fieldset'>
         {fetchRewardsData !== [] ? (
           fetchRewardsData.map((item) => (
-            <li className='inner-container' key={item.id}>
-              <div>Group: {item.listId}</div>
-              <div>Id: {item.id}</div>
-              <div>Name: {item.name}</div>
-            </li>
+            <div key={item.id}>
+              <li className='inner-container'>
+                <div>Group: {item.listId}</div>
+                <div>Id: {item.id}</div>
+                <div>Name: {item.name}</div>
+              </li>
+              <Divider />
+            </div>
           ))
         ) : (
           <div className='inner-container'>
