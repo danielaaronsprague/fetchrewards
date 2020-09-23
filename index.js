@@ -15,6 +15,7 @@ app.use((req, res, next) =>
   path.extname(req.path).length > 0 ? res.status(404).send("Not found") : next()
 );
 
+// all routes point to the main app
 app.use("*", (req, res, next) =>
   res.sendFile(path.join(__dirname, ".", "public/index.html"))
 );
